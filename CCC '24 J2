@@ -1,0 +1,11 @@
+class Main:
+    D = int(input()) 
+    C = 0 
+
+    while True:
+        C = int(input())
+        if D > C:
+            D += C
+        else: 
+            print(D)
+            break
