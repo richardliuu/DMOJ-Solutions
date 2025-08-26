@@ -1,0 +1,12 @@
+def main():
+    regular = int(input())
+    small = int(input())
+
+    a = regular * 8 
+    b = small * 3 
+
+    remainder = (a + b) - 28
+
+    print(remainder)
+
+main()
