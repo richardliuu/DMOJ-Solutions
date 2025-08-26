@@ -1,0 +1,19 @@
+def main():
+    P = int(input())
+    N = int(input())
+    R = int(input())
+
+    days = 0
+    infected = N
+    total_infected = N
+
+    for i in range(10000000):
+        if total_infected > P:
+            print(days)
+            break
+
+        infected = infected * R
+        total_infected += infected
+        days += 1
+
+main()
