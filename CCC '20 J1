@@ -1,0 +1,15 @@
+def main():
+    S = int(input())
+    M = int(input())
+    L = int(input())
+
+    happy_threshold = 10
+
+    happy_score = 1 * S + 2 * M + 3 * L
+
+    if happy_score < happy_threshold:
+        print("sad")
+    else:
+        print("happy")
+
+main()
