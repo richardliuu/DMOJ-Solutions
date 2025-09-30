@@ -1,0 +1,20 @@
+t = input()
+s = input()
+
+shifts = set()
+
+found = False
+
+for i in range(len(s)):
+    shifted = s[i:] + s[:i]
+    shifts.add(shifted)
+    
+for j in shifts:
+    if j in t:
+        found = True
+        break
+
+if found:
+    print("yes")
+else:
+    print("no")
