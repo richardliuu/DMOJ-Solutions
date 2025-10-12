@@ -1,1 +1,20 @@
 
+n = int(input())
+
+cube = 192
+
+for i in range(n):
+    t = int(input())
+
+    while True:
+        result = cube ** 3
+
+        if cube < t:
+            cube += 250
+        
+        elif result % 1000 == 888:
+            break
+        else:
+            break
+
+    print(cube)
