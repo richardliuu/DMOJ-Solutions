@@ -1,0 +1,48 @@
+import math
+
+def is_fibonacci(num):
+    if num < 0:
+        return False
+    
+    if num == 0 or num == 1:
+        return True
+
+    a = 0
+    b = 1
+
+    while b < num:
+        a, b = b, a + b
+    return b == num 
+
+def is_prime(num):
+
+    if num == 2:
+        return True
+
+    if num % 2 == 0:
+        return False
+
+    if num == 0 or num == 1:
+        return False
+
+    for i in range(2, int(math.sqrt(num)) + 1):
+        if num % i == 0:
+            return False
+    
+    return True
+        
+def check(t):     
+    if t > 1 and is_fibonacci(t) and not is_prime(t):
+        return True
+    else:
+        return False 
+
+n = int(input())
+
+for i in range(n):
+    t = int(input())
+
+    if check(t):
+        print("YES")
+    else:
+        print("NO")
