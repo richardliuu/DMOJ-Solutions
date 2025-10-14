@@ -1,0 +1,32 @@
+def main():
+    N = int(input())
+
+    for i in range(N):
+        answer = ""
+        integer_list = [] 
+        numbers = 0
+        product_code = input()
+        coefficient = 1 
+
+        for j in range(len(product_code)):
+            if product_code[j].isupper():
+                answer += product_code[j]
+
+            if product_code[j].isdigit():
+                numbers = numbers*10+int(product_code[j])
+
+            elif numbers != 0:
+                integer_list.append(numbers*coefficient)
+                numbers = 0
+                coefficient = 1 
+
+            if product_code[j] == "-":
+                coefficient = -1
+
+        if numbers != 0:
+            integer_list.append(numbers*coefficient)
+                
+        answer += str(sum(integer_list))
+        print(answer)
+
+main()
