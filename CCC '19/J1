@@ -1,1 +1,17 @@
+mylist = []
 
+for i in range(2):
+    three_point = int(input())
+    two_point = int(input())
+    one_point = int(input())
+
+    score = (three_point * 3) + (two_point * 2) + one_point 
+    
+    mylist.append(score)
+
+if mylist[0] > mylist[1]:
+    print("A")
+elif mylist[0] == mylist[1]:
+    print("T")
+else:
+    print("B")
