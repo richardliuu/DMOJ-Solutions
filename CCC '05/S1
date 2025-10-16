@@ -1,0 +1,34 @@
+def convert(tele_num):
+    new_tele = ""
+
+    # Loop through the letters and convert based on rules
+    for i in range(len(tele_num)):
+        # Handle if the letters are digits or a dash
+        if tele_num[i].isdigit():
+            new_tele += tele_num[i]
+        # Check for the letters 
+        elif tele_num[i] == "A" or tele_num[i] == "B" or tele_num[i] == "C":
+            new_tele += "2"
+        elif tele_num[i] == "D" or tele_num[i] == "E" or tele_num[i] == "F":
+            new_tele += "3"
+        elif tele_num[i] == "G" or tele_num[i] == "H" or tele_num[i] == "I":
+            new_tele += "4"
+        elif tele_num[i] == "J" or tele_num[i] == "K" or tele_num[i] == "L":
+            new_tele += "5"
+        elif tele_num[i] == "M" or tele_num[i] == "N" or tele_num[i] == "O":
+            new_tele += "6"
+        elif tele_num[i] == "P" or tele_num[i] == "Q" or tele_num[i] == "R" or tele_num[i] == "S":
+            new_tele += "7"
+        elif tele_num[i] == "T" or tele_num[i] == "U" or tele_num[i] == "V":
+            new_tele += "8"
+        elif tele_num[i] == "W" or tele_num[i] == "X" or tele_num[i] == "Y" or tele_num[i] == "Z":
+            new_tele += "9"
+        
+    return new_tele[0:3] + "-" + new_tele[3:6] + "-" + new_tele[6:10]
+
+n = int(input())
+
+for i in range(n):
+    t = input()
+
+    print(convert(t))
