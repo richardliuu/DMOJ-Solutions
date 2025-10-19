@@ -1,1 +1,25 @@
+word = input()
+word2 = input()
 
+sorted_list_word = sorted(list(word))
+sorted_list_word2 = sorted(list(word2))
+
+a = []
+b = []
+
+for i in word:
+    if i != " ":
+        a.append(i)
+
+sorted_a = sorted(a)
+
+for j in word2:
+    if j != " ":
+        b.append(j)
+
+sorted_b = sorted(b)
+
+if sorted_a == sorted_b:
+    print("Is an anagram.")
+else:
+    print("Is not an anagram.")
