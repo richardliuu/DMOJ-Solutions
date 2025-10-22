@@ -1,0 +1,24 @@
+tune = input()
+tune_list = list(tune)
+
+converted_tunes = []
+
+length = len(tune_list)
+
+start = 0 
+
+for i in range(length):
+    if tune_list[i].isdigit():
+        converted_tunes.append(''.join(tune_list[start:i+1]))
+        start = i + 1
+
+for word in converted_tunes:
+    condition = ""
+    index = 0 
+    for k in word:
+        index += 1
+        if k == "+":
+            condition = "tighten"
+        elif k == "-":
+            condition = "loosen"
+    print(f"{word[0:index-2]} {condition} {word[index-1]}")
