@@ -1,1 +1,40 @@
 
+ottawa = str(input())
+
+print(f"{ottawa} in Ottawa")
+
+if int(ottawa) - 300 < 0:
+    print(f"{24 + int(ottawa[0:1]) - 3}{ottawa[2:4]} in Victoria")
+else:
+    print(f"{int(ottawa) - 300} in Victoria")
+
+# Edmonton
+if int(ottawa) - 200 < 0:
+    print(f"{24 + int(ottawa[0:1]) - 2}{ottawa[2:4]} in Edmonton")
+else: 
+    print(f"{int(ottawa) - 200} in Edmonton")
+
+# Winnipeg 
+if int(ottawa) - 100 < 0:
+    print(f"{24 + int(ottawa[0:1]) - 1}{ottawa[2:4]} in Winnipeg")
+else: 
+    print(f"{int(ottawa) - 100} in Winnipeg")
+
+# Toronto
+print(f"{ottawa} in Toronto")
+
+# Halifax
+if int(ottawa) + 100 < 0:
+    print(f"{24 + int(ottawa[0:1]) - 1}{ottawa[2:4]} in Halifax")
+else: 
+    print(f"{int(ottawa) - 100} in Halifax")
+
+# St. John's
+if int(ottawa) + 100 < 0:
+    print(f"{24 + int(ottawa[0:1]) - 1}{ottawa[2:4] + str(30)} in St. John's")
+else: 
+    print(f"{int(ottawa) + 130} in St. John's")
+
+
+
+
