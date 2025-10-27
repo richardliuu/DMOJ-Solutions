@@ -1,4 +1,3 @@
-
 ottawa = str(input())
 
 print(f"{ottawa} in Ottawa")
@@ -24,17 +23,16 @@ else:
 print(f"{ottawa} in Toronto")
 
 # Halifax
-if int(ottawa) + 100 < 0:
-    print(f"{24 + int(ottawa[0:1]) - 1}{ottawa[2:4]} in Halifax")
+if int(ottawa) + 100 > 2400:
+    print(f"{"0" + str(int(ottawa) + 100)} in Halifax")
 else: 
-    print(f"{int(ottawa) - 100} in Halifax")
+    print(f"{int(ottawa) + 100} in Halifax")
 
 # St. John's
-if int(ottawa) + 100 < 0:
-    print(f"{24 + int(ottawa[0:1]) - 1}{ottawa[2:4] + str(30)} in St. John's")
+if int(ottawa) + 130 > 2400:
+    print(f"{"0" + str(int(ottawa) + 130)} in St. John's")
 else: 
     print(f"{int(ottawa) + 130} in St. John's")
-
 
 
 
