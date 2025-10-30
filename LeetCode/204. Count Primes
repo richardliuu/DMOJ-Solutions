@@ -1,0 +1,19 @@
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        prime = []
+        
+        for i in range(n+1):
+            prime.append(True)
+        
+        for i in range(2, n+1):
+            if prime[i]:
+                for i in range(i*i, n+1, i):
+                    prime[i] = False
+
+        num_prime = 0
+
+        for i in range(2, n):
+            if prime[i] == True:
+                num_prime += 1
+        
+        return num_prime
