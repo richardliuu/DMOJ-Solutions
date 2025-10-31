@@ -1,1 +1,20 @@
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        # Get the length of the nums 
+        length = len(nums)
 
+        small = 0
+        big = length - 1
+
+        while small <= big:
+            mid = (small + big) // 2
+            if target < nums[mid]:
+                big = mid - 1
+                mid = (small+big) // 2
+            elif target > nums[mid]:
+                small = mid + 1 
+                mid = (big+mid) // 2
+            else:
+                return mid 
+
+        return -1 
