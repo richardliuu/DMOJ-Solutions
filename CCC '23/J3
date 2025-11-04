@@ -1,1 +1,30 @@
+n = int(input())
 
+schedule = []
+attendees = [] 
+
+for i in range(n):
+    days = input()
+
+    schedule.append(list(days))
+
+length = len(schedule)
+
+for j in range(5):
+    count = 0 
+
+    for k in range(length):
+        if schedule[k][j] == "Y":
+            count += 1 
+
+    attendees.append(count) 
+
+greatest = max(attendees)
+
+num = []
+
+for t in range(len(attendees)):
+    if attendees[t] == greatest:
+      num.append(str(t+1))  
+
+print(",".join(num))
