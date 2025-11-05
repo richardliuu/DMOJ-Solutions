@@ -1,0 +1,35 @@
+text = input()
+
+# Track lengths of each list 
+palindrome_lengths = []
+palindromes = []
+
+# Palindrome checker 
+def is_palindrome(text):
+    if text[-1::-1] == text:
+        return True
+    else:
+        return False 
+
+"""
+The nested loop gets all possible variations 
+of the string.
+"""
+
+# Loop through the ith iteration
+for i in range(len(text)):
+    # Loop through the jth iteration on the ith
+    for j in range(1, len(text) + 1):
+        palindromes.append(text[i:j])
+
+for k in palindromes:
+    if is_palindrome(k):
+        palindrome_lengths.append(len(k))
+
+print(max(palindrome_lengths))
+
+
+
+
+
+
