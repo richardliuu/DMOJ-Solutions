@@ -1,0 +1,9 @@
+class Solution:
+    def isPerfectSquare(self, num: int) -> bool:
+        import math
+        square_root = num ** 0.5
+
+        if square_root > math.floor(square_root):
+            return False
+        else:
+            return True
