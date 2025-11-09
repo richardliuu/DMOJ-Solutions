@@ -1,1 +1,13 @@
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        length = len(s)
+        longest_palindrome = ""
 
+        for i in range(length):
+            for j in range(i, length+1):
+                string = s[i:j]
+
+                if string == string[-1::-1] and len(string) > len(longest_palindrome):
+                    longest_palindrome = string
+
+        return longest_palindrome
