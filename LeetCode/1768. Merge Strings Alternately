@@ -1,0 +1,15 @@
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        new_string = ""
+
+        # Get the max of both
+        max_len = max(len(word1), len(word2))
+
+        for i in range(max_len):
+            # 2 separate conditions 
+            if i < len(word1):
+                new_string += word1[i]
+            if i < len(word2):
+                new_string += word2[i]
+
+        return new_string 
