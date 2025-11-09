@@ -1,1 +1,14 @@
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        occurence = 0 
+        length = len(haystack)
 
+        if haystack == needle:
+            return 0 
+
+        for i in range(length):
+            for j in range(i, length+1):
+                if haystack[i:j] == needle:
+                    return i
+
+        return -1 
