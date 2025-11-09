@@ -1,0 +1,16 @@
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        s_letters = []
+        t_letters = [] 
+
+        for i in s:
+            s_letters.append(i)
+        
+        for j in t:
+            t_letters.append(j)
+
+        for k in range(len(s_letters)):
+            if s_letters[k] in t_letters:
+                t_letters.remove(s_letters[k])
+        
+        return t_letters[0]
