@@ -1,1 +1,18 @@
+# ====== BRUTE FORCE SOLUTION ====== 
+# Exceeds time limit on LeetCode 
 
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        starts = [] 
+        length = len(s)
+        p_sorted = sorted(p)
+
+        for i in range(length):
+            for j in range(i, length+1):
+                string = s[i:j]
+                str_sorted = sorted(string)
+                if len(string) == len(p) and str_sorted == p_sorted:
+                    starts.append(i)
+                    
+        return starts
+        
