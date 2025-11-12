@@ -1,1 +1,13 @@
+class Solution:
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        length = len(s)
 
+        for i in range(1, length // 2 + 1):
+            if length % i == 0:
+                substring = s[:i]
+                copy = length // i 
+
+                if substring * copy == s:
+                    return True
+
+        return False
