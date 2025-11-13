@@ -1,0 +1,29 @@
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        s1_counts = {}
+        window_counts = {}
+        window = [] 
+
+        for i in s1:
+            if i not in s1_counts:
+                s1_counts[i] = 1
+            else:
+                s1_counts[i] += 1 
+
+        for k in range(len(s2) - len(s1) + 1):
+            window.clear()
+            for l in s2[k:k + len(s1)]:
+                window.append(l)
+
+            for j in window:
+                if j not in window_counts:
+                    window_counts[j] = 1
+                else:
+                    window_counts[j] += 1 
+
+            if s1_counts == window_counts:
+                return True
+            else:
+                window_counts.clear()
+        
+        return False
