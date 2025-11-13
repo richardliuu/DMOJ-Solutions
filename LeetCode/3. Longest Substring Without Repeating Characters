@@ -1,0 +1,21 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        letters = set()
+        left = 0 
+        substring_length = 0 
+        string_length = len(s)
+
+        # Outer Loop
+        for right in range(string_length):
+            # If letter is already found, shift the window
+            while s[right] in letters:
+                # Remove the left pointer index 
+                letters.remove(s[left])
+                # Move left up after removing
+                left += 1
+
+            # Add letters to right
+            letters.add(s[right])
+            substring_length = max(substring_length, right - left + 1)
+
+        return substring_length
