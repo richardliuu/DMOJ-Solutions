@@ -1,0 +1,17 @@
+class Solution:
+    def canMakeArithmeticProgression(self, arr: List[int]) -> bool:
+        diffs = []
+        
+        for i in range(len(arr) - 1):
+            s_arr = sorted(arr)
+            d = s_arr[i] - s_arr[i + 1]
+            diffs.append(d)
+           
+        diff = diffs[0]
+
+        for i in range(len(diffs)):
+            if int(diffs[i]) != int(diff):
+                return False
+    
+        return True
+        
