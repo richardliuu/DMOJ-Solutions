@@ -1,0 +1,15 @@
+class Solution:
+    def arraySign(self, nums: List[int]) -> int:
+        total = 1 
+
+        for i in range(len(nums)):
+            print(nums[i])
+            total *= nums[i]
+
+        if total > 0:
+            return 1
+        elif total == 0:
+            return 0
+        elif total < 0:
+            return -1 
+        
