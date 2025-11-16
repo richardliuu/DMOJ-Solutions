@@ -15,4 +15,47 @@ class Solution:
                     starts.append(i)
                     
         return starts
+
+# Sliding window
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        start_indices = []
+        freq = {}
+        window_freq = {}
+
+        # Get the frequency of p 
+        for j in p:
+            if j not in freq:
+                freq[j] = 1 
+            else:
+                freq[j] += 1 
+
+        # Build the window 
+        for i in s[0:len(p)]:
+            if i not in window_freq:
+                window_freq[i] = 1
+            else:
+                window_freq[i] += 1
+            
+        for right in range(len(s) - len(p) + 1):
+            if window_freq == freq:
+                start_indices.append(right)
+            
+            if right + len(p) < len(s):
+                out = s[right]
+                inc = s[right+len(p)]
+
+                if inc not in window_freq:
+                    window_freq[inc] = 1
+                else:
+                    window_freq[inc] += 1
+                
+                if out in window_freq:
+                    window_freq[out] -= 1
+
+                    if window_freq[out] == 0:
+                        del window_freq[out]
+
+        return start_indices
+
         
